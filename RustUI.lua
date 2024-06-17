@@ -17,6 +17,7 @@ local function makeDraggable(frame, handle)
             dragging = true
             dragStart = input.Position
             startPos = frame.Position
+
             input.Changed:Connect(function()
                 if input.UserInputState == Enum.UserInputState.End then
                     dragging = false
@@ -44,8 +45,8 @@ function RustUI:CreateUI()
     screenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 
     local mainFrame = Instance.new("Frame")
-    mainFrame.Size = UDim2.new(0, 300, 0, 400)
-    mainFrame.Position = UDim2.new(0.5, -150, 0.5, -200)
+    mainFrame.Size = UDim2.new(0, 400, 0, 300)  -- Adjusted size
+    mainFrame.Position = UDim2.new(0.5, -200, 0.5, -150)
     mainFrame.BackgroundColor3 = Color3.fromRGB(33, 33, 33)
     mainFrame.Parent = screenGui
     mainFrame.ClipsDescendants = true
@@ -115,7 +116,7 @@ function RustUI:CreateTab(name)
     tabButton.Text = name
     tabButton.Font = Enum.Font.Gotham
     tabButton.TextSize = 16
-    tabButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+    tabButton.TextColor3 = Color3.fromRGB(200, 200, 200)  -- Changed text color to be less bright
     tabButton.Size = UDim2.new(1, 0, 0, 50)
     tabButton.BackgroundColor3 = Color3.fromRGB(42, 42, 42)
 
@@ -161,4 +162,3 @@ function RustUI:CreateElement(parent, elementType, text)
 end
 
 return RustUI
-
